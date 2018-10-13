@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock paper Cissors</title>
+    </head>
+    <body>
+        <script> 
+            function computerPlay(){
+                let myArray = ["Rock","Paper","Cissors"];
+                let random = myArray[Math.floor(Math.random()*myArray.length)];
+                return random;
+            }
+            function playRound(playerSelection, computerSelection){
+                if (playerSelection == "Rock" && computerSelection == "Paper"){
+                    alert("LOSER ! Rock gets wrapped by paper")
+                    }
+                else if (playerSelection == "Rock" && computerSelection == "Cissors"){
+                    alert("WINNER! Rock breaks cissors")
+                    }
+                else if (playerSelection == "Paper" && computerSelection == "Rock"){
+                    alert("WINNER! Paper wraps rock")
+                }
+                else if (playerSelection == "Paper" && computerSelection == "Cissors"){
+                    alert("LOSER! Paper get cutted by Cissors")
+                }
+                else if (playerSelection == "Cissors" && computerSelection == "Rock"){
+                    alert("LOSER! Cissors get broken by rock")
+                }
+                else if (playerSelection =="Cissors" && computerSelection == "Paper"){
+                    alert("WINNER! Cissors cut paper")
+                }
+                else {alert("DRAW")}
+                }       
+            let computerSelection = computerPlay();
+            let playerSelection = "Rock";
+
+        </script>
+    </body>
+</html>
