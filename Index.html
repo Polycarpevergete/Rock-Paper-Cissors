@@ -10,30 +10,84 @@
                 let random = myArray[Math.floor(Math.random()*myArray.length)];
                 return random;
             }
+
+            let playerWin = 0;
+            let computerWin = 0;
+
+            function game(){
+
+                round1();
+                round2();
+                round3();
+                round4();
+                round5();
+                return theWinnerIs();
+
+                function round1(){    
+                let computerSelection = computerPlay();
+                let playerSelection = prompt("Choose your weapon");
+                playRound(playerSelection, computerSelection);
+                alert("Player gets " +playerWin + ", computer gets " +computerWin);
+                }
+
+                function round2(){let computerSelection = computerPlay();
+                let playerSelection = prompt("Choose your weapon");
+                playRound(playerSelection, computerSelection);
+                alert("Player gets " +playerWin + ", computer gets " +computerWin);}
+
+                function round3(){let computerSelection = computerPlay();
+                let playerSelection = prompt("Choose your weapon");
+                playRound(playerSelection, computerSelection);
+                alert("Player gets " +playerWin + ", computer gets " +computerWin);}
+
+                function round4(){let computerSelection = computerPlay();
+                let playerSelection = prompt("Choose your weapon");
+                playRound(playerSelection, computerSelection);
+                alert("Player gets " +playerWin + ", computer gets " +computerWin);}
+
+                function round5(){let computerSelection = computerPlay();
+                let playerSelection = prompt("Choose your weapon");
+                playRound(playerSelection, computerSelection);
+                alert("Player gets " +playerWin + ", computer gets " +computerWin);}
+
+                function theWinnerIs() {
+                    if(playerWin > computerWin){alert("You WIN")}
+                    else if (computerWin > playerWin){alert("You LOSE")}
+                    else {alert("DRAW")}
+                }
+    
             function playRound(playerSelection, computerSelection){
                 if (playerSelection == "Rock" && computerSelection == "Paper"){
+                    computerWin += 1;
                     alert("LOSER ! Rock gets wrapped by paper")
                     }
                 else if (playerSelection == "Rock" && computerSelection == "Cissors"){
+                    playerWin += 1;
                     alert("WINNER! Rock breaks cissors")
                     }
                 else if (playerSelection == "Paper" && computerSelection == "Rock"){
+                    playerWin +=1;
                     alert("WINNER! Paper wraps rock")
                 }
                 else if (playerSelection == "Paper" && computerSelection == "Cissors"){
+                    computerWin+=1;
                     alert("LOSER! Paper get cutted by Cissors")
                 }
                 else if (playerSelection == "Cissors" && computerSelection == "Rock"){
+                    computerWin +=1;
                     alert("LOSER! Cissors get broken by rock")
+        
                 }
                 else if (playerSelection =="Cissors" && computerSelection == "Paper"){
+                    playerWin +=1;
                     alert("WINNER! Cissors cut paper")
                 }
-                else {alert("DRAW")}
-                }       
-            let computerSelection = computerPlay();
-            let playerSelection = "Rock";
-
+                else {
+                    computerWin +=0;
+                    playerWin +=0;
+                    alert("DRAW")}
+                }   
+            }
         </script>
     </body>
 </html>
